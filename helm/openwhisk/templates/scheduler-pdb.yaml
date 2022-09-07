@@ -1,4 +1,3 @@
-<!--
 #
 # Licensed to the Apache Software Foundation (ASF) under one or more
 # contributor license agreements.  See the NOTICE file distributed with
@@ -15,28 +14,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
--->
 
-# Changelog
-
-## 1.0.0
-  * First Apache Release
-
-### helm openwhisk templates
-
-_helper.tpl
-_invoker-helpers.tpl
-_readiness.tpl
-controller-pod.yaml
-etcd-pod.yaml
-etcd-pvc.yaml
-etcd-svc.yaml
-install-packages-job.yaml
-invoker-pod.yaml
-invoker-role.yaml
-scheduler-pod.yaml
-scheduler-pdb.yaml
-scheduler-svc.yaml
-
-### helm openwhisk
-values.yaml
+{{- if .Values.scheduler.enable }}
+{{- if and .Values.pdb.enable (gt (int .Values.scheduler.replicaCount)  1) }}
+---
+apiVersion: policy/v1beta1
+kind: PodDisruptionBudget
+metadata:
+  name: {{ .Release.Name }}-scheduler-pdb
+  labels:
+    name: {{ .Release.Name }}-scheduler-pdb
+{{ include "openwhisk.label_boilerplate" . | indent 4 }}
+spec:
+  selector:
+    matchLabels:
+      name: {{ .Release.Name }}-scheduler
+  maxUnavailable: {{ .Values.pdb.scheduler.maxUnavailable | default 1 }}
+{{- end }}
+{{- end }}

@@ -27,7 +27,7 @@
     path: "/var/lib/docker/containers"
 - name: dockersock
   hostPath:
-    path: "/var/run/docker.sock"
+    path: "/run/containerd/containerd.sock"
 {{- end -}}
 
 {{- define "openwhisk.docker_volume_mounts" -}}
@@ -36,7 +36,7 @@
 - name: runc
   mountPath: "/run/runc"
 - name: dockersock
-  mountPath: "/var/run/docker.sock"
+  mountPath: "/run/containerd/containerd.sock"
 - name: dockerrootdir
   mountPath: "/containers"
 {{- end -}}
@@ -48,7 +48,7 @@
   command: ["/usr/local/bin/ansible-playbook", "/invoker-scripts/playbook.yml"]
   volumeMounts:
   - name: dockersock
-    mountPath: "/var/run/docker.sock"
+    mountPath: "/run/containerd/containerd.sock"
   - name: scripts-dir
     mountPath: "/invoker-scripts/playbook.yml"
     subPath: "playbook.yml"

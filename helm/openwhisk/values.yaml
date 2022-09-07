@@ -120,17 +120,23 @@ whisk:
         segmentBytes: ""
         retentionBytes: ""
         retentionMs: ""
+      scheduler:
+        segmentBytes: ""
+        retentionBytes: ""
+        retentionMs: "" 
   containerPool:
     userMemory: "2048m"
   runtimes: "runtimes.json"
+  durationChecker:
+    timeWindow: "1 d" 
   testing:
     includeTests: true
     includeSystemTests: false
   versions:
     openwhisk:
-      buildDate: "2022-06-23-06:18:00Z"
-      buildNo: "20220623a"
-      gitTag: "c5970a657a3070e9964cb14715b9df31819d3b75"
+      buildDate: "2022-04-25-15:35:11Z"
+      buildNo: "20220425"
+      gitTag: "3e3414ced7fb6e6d85b95f0f9cdd43a0a68da4fd"
     openwhiskCli:
       tag: "1.1.0"
     openwhiskCatalog:
@@ -259,6 +265,54 @@ controller:
   jvmOptions: ""
   loglevel: "INFO"
 
+# Scheduler configurations
+scheduler:
+  enable: true
+  imageName: "qi0523/scheduler"
+  imageTag: "c5970a6"
+  imagePullPolicy: "IfNotPresent"
+  replicaCount: 1 # only 1 is currently supported
+  restartPolicy: "Always"
+  port: 8080
+  rpcPort: 13001
+  options: ""
+  jvmHeapMB: "1024"
+  jvmOptions: ""
+  loglevel: "INFO"
+  protocol: "http"
+  maxPeek: 128
+  # Sometimes the kubernetes client takes a long time for pod creation
+  inProgressJobRetention: "60 seconds"
+  dataManagementService:
+    retryInterval: "1 second"
+  queueManager:
+    maxSchedulingTime: "20 second"
+    maxRetriesToGetQueue: "13"
+  queue:
+    idleGrace: "20 seconds"
+    stopGrace: "20 seconds"
+    flushGrace: "60 seconds"
+    gracefulShutdownTimeout: "5 seconds"
+    maxRetentionSize: 10000
+    maxRetentionMs: 60000
+    throttlingFraction: 0.9
+    durationBufferSize: 10
+
+# etcd (used by scheduler and controller if scheduler is enabled)
+etcd:
+  external: false
+  imageName: "quay.io/coreos/etcd"
+  imageTag: "v3.4.0"
+  imagePullPolicy: "IfNotPresent"
+  # NOTE: setting replicaCount > 1 will not work; need to add etcd cluster configuration
+  replicaCount: 1
+  restartPolicy: "Always"
+  port: 2379
+  lease_timeout: 1
+  pool_threads: 10
+  persistence:
+    size: 256Mi
+
 # Invoker configurations
 invoker:
   imageName: "openwhisk/invoker"
@@ -272,6 +326,7 @@ invoker:
   jvmOptions: ""
   loglevel: "INFO"
   containerFactory:
+    docker_pull_runtimes: "false"
     useRunc: false
     impl: "kubernetes"
     enableConcurrency: false
@@ -454,6 +509,15 @@ probes:
       periodSeconds: 10
       timeoutSeconds: 5
   controller:
+    livenessProbe:
+      initialDelaySeconds: 10
+      periodSeconds: 10
+      timeoutSeconds: 1
+    readinessProbe:
+      initialDelaySeconds: 10
+      periodSeconds: 10
+      timeoutSeconds: 1
+  scheduler:
     livenessProbe:
       initialDelaySeconds: 10
       periodSeconds: 10

@@ -1,4 +1,3 @@
-<!--
 #
 # Licensed to the Apache Software Foundation (ASF) under one or more
 # contributor license agreements.  See the NOTICE file distributed with
@@ -15,28 +14,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
--->
 
-# Changelog
-
-## 1.0.0
-  * First Apache Release
-
-### helm openwhisk templates
-
-_helper.tpl
-_invoker-helpers.tpl
-_readiness.tpl
-controller-pod.yaml
-etcd-pod.yaml
-etcd-pvc.yaml
-etcd-svc.yaml
-install-packages-job.yaml
-invoker-pod.yaml
-invoker-role.yaml
-scheduler-pod.yaml
-scheduler-pdb.yaml
-scheduler-svc.yaml
-
-### helm openwhisk
-values.yaml
+{{ if not .Values.etcd.external }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}-etcd
+  labels:
+    name: {{ .Release.Name }}-etcd
+{{ include "openwhisk.label_boilerplate" . | indent 4 }}
+spec:
+  selector:
+    name: {{ .Release.Name }}-etcd
+  ports:
+    - port: {{ .Values.etcd.port }}
+      name: etcd
+{{ end }}
