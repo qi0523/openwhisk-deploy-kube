@@ -254,8 +254,8 @@ nginx:
 
 # Controller configurations
 controller:
-  imageName: "openwhisk/controller"
-  imageTag: "c5970a6"
+  imageName: "qi0523/controller"
+  imageTag: "latest"
   imagePullPolicy: "IfNotPresent"
   replicaCount: 1
   restartPolicy: "Always"
