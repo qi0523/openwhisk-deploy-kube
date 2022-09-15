@@ -269,7 +269,7 @@ controller:
 scheduler:
   enable: true
   imageName: "qi0523/scheduler"
-  imageTag: "c5970a6"
+  imageTag: "latest"
   imagePullPolicy: "IfNotPresent"
   replicaCount: 1 # only 1 is currently supported
   restartPolicy: "Always"
@@ -315,8 +315,8 @@ etcd:
 
 # Invoker configurations
 invoker:
-  imageName: "openwhisk/invoker"
-  imageTag: "c5970a6"
+  imageName: "qi0523/invoker"
+  imageTag: "latest"
   imagePullPolicy: "IfNotPresent"
   restartPolicy: "Always"
   runtimeDeleteTimeout: "30 seconds"
