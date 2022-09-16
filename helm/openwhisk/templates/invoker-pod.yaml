@@ -80,7 +80,8 @@ spec:
 {{ include "openwhisk.readiness.waitForController" . | indent 6 }}
 {{ include "openwhisk.docker.imagePullSecrets" . | indent 6 }}
       containers:
-      - name: invoker
+      - name: invoker #### mount host containerd and cni and runc and nerdctl
+      ### nerdctl run -it --privileged --name=u1 -v /run/containerd:/run/containerd -v /usr/local/bin/nerdctl:/usr/local/bin/nerdctl  -v /var/lib/containerd:/var/lib/containerd -v /opt/cni/bin:/opt/cni/bin -v /usr/local/sbin/runc:/usr/local/sbin/runc -v /var/lib/nerdctl:/var/lib/nerdctl/ ubuntu:latest
         image: "{{- .Values.docker.registry.name -}}{{- .Values.invoker.imageName -}}:{{- .Values.invoker.imageTag -}}"
         imagePullPolicy: {{ .Values.invoker.imagePullPolicy | quote }}
 {{- if and (eq .Values.invoker.containerFactory.impl "docker") .Values.invoker.containerFactory.networkConfig.dns.inheritInvokerConfig }}
