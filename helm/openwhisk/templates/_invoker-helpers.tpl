@@ -15,30 +15,51 @@
 # limitations under the License.
 #
 
+### nerdctl run -it --privileged --name=u1 
+### -v /run/containerd:/run/containerd -v /usr/local/bin/nerdctl:/usr/local/bin/nerdctl  
+### -v /var/lib/containerd:/var/lib/containerd -v /opt/cni/bin:/opt/cni/bin 
+### -v /usr/local/sbin/runc:/usr/local/sbin/runc 
+### -v /var/lib/nerdctl:/var/lib/nerdctl/ ubuntu:latest
+
 {{- define "openwhisk.docker_volumes" -}}
 - name: cgroup
   hostPath:
     path: "/sys/fs/cgroup"
 - name: runc
   hostPath:
-    path: "/run/runc"
+    path: "/usr/local/sbin/runc"
 - name: dockerrootdir
   hostPath:
-    path: "/var/lib/docker/containers"
+    path: "/var/lib/containerd"
 - name: dockersock
   hostPath:
-    path: "/run/containerd/containerd.sock"
+    path: "/run/containerd"
+- name: nerdctl
+  hostPath:
+    path: "/usr/local/bin/nerdctl"
+- name: nerdctlrootdir
+  hostPath:
+    path: "/var/lib/nerdctl"
+- name: cni
+  hostPath:
+    path: "/opt/cni/bin"
 {{- end -}}
 
 {{- define "openwhisk.docker_volume_mounts" -}}
 - name: cgroup
   mountPath: "/sys/fs/cgroup"
 - name: runc
-  mountPath: "/run/runc"
+  mountPath: "/usr/local/sbin/runc"
 - name: dockersock
-  mountPath: "/run/containerd/containerd.sock"
+  mountPath: "/run/containerd"
 - name: dockerrootdir
-  mountPath: "/containers"
+  mountPath: "/var/lib/containerd"
+- name: nerdctl
+  mountPath: "/usr/local/bin/nerdctl"
+- name: nerdctlrootdir
+  mountPath: "/var/lib/nerdctl"
+- name: cni
+  mountPath: "/opt/cni/bin"
 {{- end -}}
 
 {{- define "openwhisk.docker_pull_runtimes" -}}
