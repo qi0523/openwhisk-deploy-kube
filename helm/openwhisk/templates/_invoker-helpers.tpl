@@ -36,7 +36,7 @@
     path: "/run/containerd"
 - name: nerdctl
   hostPath:
-    path: "/usr/local/bin/nerdctl"
+    path: "/usr/bin/nerdctl"
 - name: nerdctlrootdir
   hostPath:
     path: "/var/lib/nerdctl"
@@ -55,7 +55,7 @@
 - name: dockerrootdir
   mountPath: "/var/lib/containerd"
 - name: nerdctl
-  mountPath: "/usr/local/bin/nerdctl"
+  mountPath: "/usr/bin/nerdctl"
 - name: nerdctlrootdir
   mountPath: "/var/lib/nerdctl"
 - name: cni
