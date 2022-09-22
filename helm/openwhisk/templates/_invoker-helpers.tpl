@@ -43,7 +43,7 @@
 - name: cni
   hostPath:
     path: "/opt/cni/bin"
-- name: cniRootPath
+- name: cnirootdir
   hostPath:
     path: "/var/lib/cni"
 {{- end -}}
@@ -63,7 +63,7 @@
   mountPath: "/var/lib/nerdctl"
 - name: cni
   mountPath: "/opt/cni/bin"
-- name: cniRootPath
+- name: cnirootdir
   mountPath: "/var/lib/cni"
 {{- end -}}
 
