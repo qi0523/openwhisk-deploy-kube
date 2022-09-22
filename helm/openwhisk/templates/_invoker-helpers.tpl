@@ -43,6 +43,9 @@
 - name: cni
   hostPath:
     path: "/opt/cni/bin"
+- name: cniRootPath
+  hostPath:
+    path: "/var/lib/cni"
 {{- end -}}
 
 {{- define "openwhisk.docker_volume_mounts" -}}
@@ -60,6 +63,8 @@
   mountPath: "/var/lib/nerdctl"
 - name: cni
   mountPath: "/opt/cni/bin"
+- name: cniRootPath
+  mountPath: "/var/lib/cni"
 {{- end -}}
 
 {{- define "openwhisk.docker_pull_runtimes" -}}
