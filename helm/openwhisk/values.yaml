@@ -297,6 +297,9 @@ scheduler:
     maxRetentionMs: 60000
     throttlingFraction: 0.9
     durationBufferSize: 10
+  p2pManager:
+    remoteRegistryUrl: ""
+    dlclCurrent: "2"
 
 # etcd (used by scheduler and controller if scheduler is enabled)
 etcd:
