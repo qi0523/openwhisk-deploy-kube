@@ -166,6 +166,12 @@ spec:
             fieldRef:
               fieldPath: status.podIP
 
+        - name: "CONFIG_whisk_scheduler_p2pManager_remoteRegistryUrl"
+          value: {{ .Values.scheduler.p2pManager.remoteRegistryUrl | quote }}
+
+        - name: "CONFIG_whisk_scheduler_p2pManager_dlclCurrent"
+          value: {{ .Values.scheduler.p2pManager.dlclCurrent | quote }}
+
         - name: "CONFIG_whisk_scheduler_dataManagementService_retryInterval"
           value: {{ .Values.scheduler.dataManagementService.retryInterval | quote }}
 

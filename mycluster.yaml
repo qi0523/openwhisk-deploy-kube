@@ -12,3 +12,12 @@ nginx:
 invoker:
   containerFactory:
     impl: "docker"
+  imageGc:
+    diskPath: "/"
+    highThresholdPercent: "80"
+    lowThresholdPercent: "40"
+
+scheduler:
+  p2pManager:
+    remoteRegistryUrl: "docker.io"
+    dlclCurrent: "3"

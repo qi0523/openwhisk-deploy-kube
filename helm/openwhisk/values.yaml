@@ -298,7 +298,7 @@ scheduler:
     throttlingFraction: 0.9
     durationBufferSize: 10
   p2pManager:
-    remoteRegistryUrl: ""
+    remoteRegistryUrl: "docker.io"
     dlclCurrent: "2"
 
 # etcd (used by scheduler and controller if scheduler is enabled)
@@ -346,6 +346,10 @@ invoker:
     kubernetes:
       isolateUserActions: true
       replicaCount: 1
+  imageGc:
+    diskPath: "/"
+    highThresholdPercent: "80"
+    lowThresholdPercent: "50"
 
 # API Gateway configurations
 apigw:
