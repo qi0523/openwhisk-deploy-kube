@@ -172,6 +172,9 @@ spec:
         - name: "CONFIG_whisk_scheduler_p2pManager_dlclCurrent"
           value: {{ .Values.scheduler.p2pManager.dlclCurrent | quote }}
 
+        - name: "CONFIG_whisk_spi_P2PManagerProvider"
+          value: {{ .Values.scheduler.P2PManagerProvider | quote }}
+
         - name: "CONFIG_whisk_scheduler_dataManagementService_retryInterval"
           value: {{ .Values.scheduler.dataManagementService.retryInterval | quote }}
 

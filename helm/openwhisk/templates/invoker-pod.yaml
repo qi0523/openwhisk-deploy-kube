@@ -98,14 +98,14 @@ spec:
               fieldRef:
                 fieldPath: status.hostIP
 
-        - name: "CONFIG_whisk_imageGc_diskPath"
-          value: {{ .Values.invoker.imageGc.diskPath | quote }}
+          - name: "CONFIG_whisk_imageGc_diskPath"
+            value: {{ .Values.invoker.imageGc.diskPath | quote }}
 
-        - name: "CONFIG_whisk_imageGc_highThresholdPercent"
-          value: {{ .Values.invoker.imageGc.highThresholdPercent | quote }}
+          - name: "CONFIG_whisk_imageGc_highThresholdPercent"
+            value: {{ .Values.invoker.imageGc.highThresholdPercent | quote }}
 
-        - name: "CONFIG_whisk_imageGc_lowThresholdPercent"
-          value: {{ .Values.invoker.imageGc.lowThresholdPercent | quote }}          
+          - name: "CONFIG_whisk_imageGc_lowThresholdPercent"
+            value: {{ .Values.invoker.imageGc.lowThresholdPercent | quote }}
           # Needed by invoker to set the environment variable __OW_API_HOST in action containers
 {{ include "openwhisk.invoker.apihost" . | indent 10 }}
 

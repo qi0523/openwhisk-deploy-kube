@@ -21,3 +21,6 @@ scheduler:
   p2pManager:
     remoteRegistryUrl: "docker.io"
     dlclCurrent: "3"
+  P2PManagerProvider: "org.apache.openwhisk.core.scheduler.p2p.dlcl.DLCLManagerProvider"
+  #P2PManagerProvider: "org.apache.openwhisk.core.scheduler.p2p.ft.FTManagerProvider"
+  #P2PManagerProvider: "org.apache.openwhisk.core.scheduler.p2p.NoneManagerProvider"
