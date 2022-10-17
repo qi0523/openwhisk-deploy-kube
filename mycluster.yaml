@@ -3,6 +3,11 @@ whisk:
     type: NodePort
     apiHostName: REPLACE_ME_WITH_IP
     apiHostPort: 31001
+  loadbalancer:
+    blackboxFraction: "20%"
+  containerProxy:
+    timeouts:
+      idleContainer: "5 minutes"
 # k8s:
 #   persistence:
 #     enabled: false
