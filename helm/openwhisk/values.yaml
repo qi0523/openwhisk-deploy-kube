@@ -99,6 +99,9 @@ whisk:
   containerProxy:
     timeouts:
       idleContainer: "10 minutes"
+  fraction:
+    managedFraction: "90%"
+    blackboxFraction: "10%"
   # Kafka configuration. For all sub-fields a value of "" means use the default from application.conf
   kafka:
     replicationFactor: ""
@@ -292,9 +295,9 @@ scheduler:
     maxSchedulingTime: "20 second"
     maxRetriesToGetQueue: "13"
   queue:
-    idleGrace: "20 seconds"
+    idleGrace: "80 seconds"
     stopGrace: "20 seconds"
-    flushGrace: "60 seconds"
+    flushGrace: "80 seconds"
     gracefulShutdownTimeout: "5 seconds"
     maxRetentionSize: 10000
     maxRetentionMs: 60000

@@ -129,6 +129,12 @@ spec:
         - name: "CONFIG_whisk_durationChecker_timeWindow"
           value: {{ .Values.whisk.durationChecker.timeWindow }}
 
+        - name: "CONFIG_whisk_fraction_managedFraction"
+          value: {{ .Values.whisk.fraction.managedFraction | quote }}
+
+        - name: "CONFIG_whisk_fraction_blackboxFraction"
+          value: {{ .Values.whisk.fraction.blackboxFraction | quote }}
+
         - name: "CONFIG_whisk_loadbalancer_blackboxFraction"
           value: {{ .Values.whisk.loadbalancer.blackboxFraction | quote }}
 

@@ -8,6 +8,9 @@ whisk:
   containerProxy:
     timeouts:
       idleContainer: "5 minutes"
+  fraction:
+    managedFraction: "80%"
+    blackboxFraction: "20%"
 # k8s:
 #   persistence:
 #     enabled: false
@@ -23,6 +26,7 @@ invoker:
     lowThresholdPercent: "40"
 
 scheduler:
+  inProgressJobRetention: "150 seconds"
   p2pManager:
     remoteRegistryUrl: "docker.io"
     dlclCurrent: "3"
