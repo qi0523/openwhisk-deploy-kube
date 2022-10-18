@@ -23,10 +23,15 @@ invoker:
   imageGc:
     diskPath: "/"
     highThresholdPercent: "80"
-    lowThresholdPercent: "40"
+    lowThresholdPercent: "60"
 
 scheduler:
   inProgressJobRetention: "150 seconds"
+  queue:
+    idleGrace: "120 seconds"
+    maxRetentionMs: 180000
+    throttlingFraction: 0.9
+    durationBufferSize: 10
   p2pManager:
     remoteRegistryUrl: "docker.io"
     dlclCurrent: "3"
