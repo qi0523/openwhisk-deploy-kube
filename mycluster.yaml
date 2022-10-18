@@ -21,6 +21,7 @@ invoker:
   containerFactory:
     impl: "docker"
   imageGc:
+    delay: "120"
     diskPath: "/"
     highThresholdPercent: "80"
     lowThresholdPercent: "60"

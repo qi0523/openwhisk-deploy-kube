@@ -101,6 +101,9 @@ spec:
           - name: "CONFIG_whisk_containerProxy_timeouts_idleContainer"
             value: {{ .Values.whisk.containerProxy.timeouts.idleContainer | quote }}
 
+          - name: "CONFIG_whisk_imageGc_delay"
+            value: {{ .Values.invoker.imageGc.delay | quote }}
+
           - name: "CONFIG_whisk_imageGc_diskPath"
             value: {{ .Values.invoker.imageGc.diskPath | quote }}
 

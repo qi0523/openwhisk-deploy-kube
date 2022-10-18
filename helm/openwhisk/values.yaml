@@ -354,6 +354,7 @@ invoker:
       isolateUserActions: true
       replicaCount: 1
   imageGc:
+    delay: "300"
     diskPath: "/"
     highThresholdPercent: "80"
     lowThresholdPercent: "50"
