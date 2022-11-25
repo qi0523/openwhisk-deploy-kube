@@ -3,6 +3,9 @@ whisk:
     type: NodePort
     apiHostName: REPLACE_ME_WITH_IP
     apiHostPort: 31001
+  limits:
+    actionsInvokesPerminute: 200
+    actionsInvokesConcurrent: 50
   loadbalancer:
     blackboxFraction: "20%"
   containerProxy:
@@ -26,8 +29,12 @@ invoker:
     highThresholdPercent: "80"
     lowThresholdPercent: "60"
 
+controller:
+  jvmHeapMB: "1024"
+
 scheduler:
   inProgressJobRetention: "150 seconds"
+  jvmHeapMB: "1024"
   queue:
     idleGrace: "120 seconds"
     maxRetentionMs: 180000
