@@ -4,12 +4,12 @@ whisk:
     apiHostName: REPLACE_ME_WITH_IP
     apiHostPort: 31001
   loadbalancer:
-    blackboxFraction: "20%"
+    blackboxFraction: "10%"
   containerProxy:
     timeouts:
       idleContainer: "5 minutes"
   fraction:
-    managedFraction: "80%"
+    managedFraction: "100%"
     blackboxFraction: "20%"
 # k8s:
 #   persistence:
@@ -22,12 +22,12 @@ invoker:
     impl: "docker"
   imageGc:
     delay: "120"
-    diskPath: "/"
+    diskPath: "/mydata"
     highThresholdPercent: "80"
     lowThresholdPercent: "60"
 
 scheduler:
-  inProgressJobRetention: "150 seconds"
+  inProgressJobRetention: "300 seconds"
   queue:
     idleGrace: "120 seconds"
     maxRetentionMs: 180000
@@ -35,7 +35,7 @@ scheduler:
     durationBufferSize: 10
   p2pManager:
     remoteRegistryUrl: "docker.io"
-    dlclCurrent: "3"
+    dlclCurrent: "2"
   P2PManagerProvider: "org.apache.openwhisk.core.scheduler.p2p.dlcl.DLCLManagerProvider"
   #P2PManagerProvider: "org.apache.openwhisk.core.scheduler.p2p.ft.FTManagerProvider"
   #P2PManagerProvider: "org.apache.openwhisk.core.scheduler.p2p.NoneManagerProvider"

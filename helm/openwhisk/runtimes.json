@@ -2,6 +2,48 @@
     "runtimes": {
         "nodejs": [
             {
+                "kind": "nodejs:8",
+                "default": false,
+                "image": {
+                    "prefix": "openwhisk",
+                    "name": "action-nodejs-v8",
+                    "tag": "1.20.0"
+                },
+                "deprecated": false,
+                "attached": {
+                    "attachmentName": "codefile",
+                    "attachmentType": "text/plain"
+                }
+            },
+            {
+                "kind": "nodejs:10",
+                "default": false,
+                "image": {
+                    "prefix": "openwhisk",
+                    "name": "action-nodejs-v10",
+                    "tag": "1.20.0"
+                },
+                "deprecated": false,
+                "attached": {
+                    "attachmentName": "codefile",
+                    "attachmentType": "text/plain"
+                }
+            },
+            {
+                "kind": "nodejs:12",
+                "default": false,
+                "image": {
+                    "prefix": "openwhisk",
+                    "name": "action-nodejs-v12",
+                    "tag": "1.20.0"
+                },
+                "deprecated": false,
+                "attached": {
+                    "attachmentName": "codefile",
+                    "attachmentType": "text/plain"
+                }
+            },
+            {
                 "kind": "nodejs:14",
                 "default": true,
                 "image": {
@@ -36,8 +78,22 @@
                 "default": true,
                 "image": {
                     "prefix": "openwhisk",
-                    "name": "action-python-v3.7",
-                    "tag": "1.17.0"
+                    "name": "action-python-v3.9",
+                    "tag": "1.20.0"
+                },
+                "deprecated": false,
+                "attached": {
+                    "attachmentName": "codefile",
+                    "attachmentType": "text/plain"
+                }
+            },
+            {
+                "kind": "python:2",
+                "default": true,
+                "image": {
+                    "prefix": "openwhisk",
+                    "name": "python2action",
+                    "tag": "1.20.0"
                 },
                 "deprecated": false,
                 "attached": {
@@ -53,49 +109,7 @@
                 "image": {
                     "prefix": "openwhisk",
                     "name": "action-swift-v4.2",
-                    "tag": "1.17.0"
-                },
-                "deprecated": false,
-                "attached": {
-                    "attachmentName": "codefile",
-                    "attachmentType": "text/plain"
-                }
-            },
-            {
-                "kind": "swift:5.1",
-                "default": false,
-                "image": {
-                    "prefix": "openwhisk",
-                    "name": "action-swift-v5.1",
-                    "tag": "1.17.0"
-                },
-                "deprecated": false,
-                "attached": {
-                    "attachmentName": "codefile",
-                    "attachmentType": "text/plain"
-                }
-            },
-            {
-                "kind": "swift:5.3",
-                "default": false,
-                "image": {
-                    "prefix": "openwhisk",
-                    "name": "action-swift-v5.3",
-                    "tag": "1.17.0"
-                },
-                "deprecated": false,
-                "attached": {
-                    "attachmentName": "codefile",
-                    "attachmentType": "text/plain"
-                }
-            },
-            {
-                "kind": "swift:5.4",
-                "default": false,
-                "image": {
-                    "prefix": "openwhisk",
-                    "name": "action-swift-v5.4",
-                    "tag": "1.17.0"
+                    "tag": "1.20.0"
                 },
                 "deprecated": false,
                 "attached": {
@@ -111,7 +125,7 @@
                 "image": {
                     "prefix": "openwhisk",
                     "name": "java8action",
-                    "tag": "1.17.0"
+                    "tag": "1.20.0"
                 },
                 "deprecated": false,
                 "attached": {
@@ -129,7 +143,7 @@
                 "image": {
                     "prefix": "openwhisk",
                     "name": "action-php-v7.3",
-                    "tag": "1.17.0"
+                    "tag": "1.20.0"
                 },
                 "attached": {
                     "attachmentName": "codefile",
@@ -143,21 +157,7 @@
                 "image": {
                     "prefix": "openwhisk",
                     "name": "action-php-v7.4",
-                    "tag": "1.17.0"
-                },
-                "attached": {
-                    "attachmentName": "codefile",
-                    "attachmentType": "text/plain"
-                }
-            },
-            {
-                "kind": "php:8.0",
-                "default": false,
-                "deprecated": false,
-                "image": {
-                    "prefix": "openwhisk",
-                    "name": "action-php-v7.4",
-                    "tag": "1.17.0"
+                    "tag": "1.20.0"
                 },
                 "attached": {
                     "attachmentName": "codefile",
@@ -177,13 +177,13 @@
                 "image": {
                     "prefix": "openwhisk",
                     "name": "action-ruby-v2.5",
-                    "tag": "1.17.0"
+                    "tag": "1.20.0"
                 }
             }
         ],
         "go": [
             {
-                "kind": "go:1.17",
+                "kind": "go:1.15",
                 "default": true,
                 "deprecated": false,
                 "attached": {
@@ -192,7 +192,7 @@
                 },
                 "image": {
                     "prefix": "openwhisk",
-                    "name": "action-golang-v1.17",
+                    "name": "action-golang-v1.15",
                     "tag": "1.20.0"
                 }
             }
@@ -237,7 +237,7 @@
                 "image": {
                     "prefix": "openwhisk",
                     "name": "action-dotnet-v3.1",
-                    "tag": "1.16.0"
+                    "tag": "1.20.0"
                 },
                 "attached": {
                     "attachmentName": "codefile",

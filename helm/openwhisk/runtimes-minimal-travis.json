@@ -8,7 +8,7 @@
                 "image": {
                     "prefix": "openwhisk",
                     "name": "action-nodejs-v14",
-                    "tag": "1.19.0"
+                    "tag": "1.20.0"
                 },
                 "deprecated": false,
                 "attached": {
@@ -23,8 +23,8 @@
                 "default": true,
                 "image": {
                     "prefix": "openwhisk",
-                    "name": "action-python-v3.7",
-                    "tag": "1.17.0"
+                    "name": "action-python-v3.9",
+                    "tag": "1.20.0"
                 },
                 "deprecated": false,
                 "attached": {
@@ -40,7 +40,7 @@
                 "image": {
                     "prefix": "openwhisk",
                     "name": "action-swift-v4.2",
-                    "tag": "1.17.0"
+                    "tag": "1.20.0"
                 },
                 "deprecated": false,
                 "attached": {
