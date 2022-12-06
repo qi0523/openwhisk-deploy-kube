@@ -30,11 +30,11 @@ invoker:
     lowThresholdPercent: "60"
 
 controller:
-  jvmHeapMB: "1024"
+  jvmHeapMB: "2048"
 
 scheduler:
   inProgressJobRetention: "300 seconds"
-  jvmHeapMB: "1024"
+  jvmHeapMB: "2048"
   queue:
     idleGrace: "120 seconds"
     maxRetentionMs: 180000
