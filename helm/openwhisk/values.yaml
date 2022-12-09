@@ -311,7 +311,7 @@ scheduler:
 # etcd (used by scheduler and controller if scheduler is enabled)
 etcd:
   external: false
-  imageName: "quay.io/coreos/etcd"
+  imageName: "qi0523/etcd"
   imageTag: "v3.4.0"
   imagePullPolicy: "IfNotPresent"
   # NOTE: setting replicaCount > 1 will not work; need to add etcd cluster configuration

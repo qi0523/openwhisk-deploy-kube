@@ -89,7 +89,7 @@
             },
             {
                 "kind": "python:2",
-                "default": true,
+                "default": false,
                 "image": {
                     "prefix": "openwhisk",
                     "name": "python2action",

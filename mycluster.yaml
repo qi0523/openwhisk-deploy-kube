@@ -21,6 +21,7 @@ whisk:
 nginx:
   httpsNodePort: 31001
 invoker:
+  loglevel: "DEBUG"
   containerFactory:
     impl: "docker"
   imageGc:
@@ -33,6 +34,7 @@ controller:
   jvmHeapMB: "2048"
 
 scheduler:
+  loglevel: "DEBUG"
   inProgressJobRetention: "300 seconds"
   jvmHeapMB: "2048"
   queue:
