@@ -183,7 +183,7 @@
         ],
         "go": [
             {
-                "kind": "go:1.15",
+                "kind": "golang:1.15",
                 "default": true,
                 "deprecated": false,
                 "attached": {
