@@ -21,20 +21,20 @@ whisk:
 nginx:
   httpsNodePort: 31001
 invoker:
-  loglevel: "DEBUG"
+  loglevel: "INFO"
   containerFactory:
     impl: "docker"
   imageGc:
-    delay: "120"
-    diskPath: "/mydata"
-    highThresholdPercent: "80"
+    delay: "300"
+    diskPath: "/"
+    highThresholdPercent: "85"
     lowThresholdPercent: "60"
 
 controller:
   jvmHeapMB: "2048"
 
 scheduler:
-  loglevel: "DEBUG"
+  loglevel: "INFO"
   inProgressJobRetention: "300 seconds"
   jvmHeapMB: "2048"
   queue:
