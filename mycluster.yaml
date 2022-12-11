@@ -5,7 +5,7 @@ whisk:
     apiHostPort: 31001
   limits:
     actionsInvokesPerminute: 2000
-    actionsInvokesConcurrent: 50
+    actionsInvokesConcurrent: 2000
     triggersFiresPerminute: 2000
   loadbalancer:
     blackboxFraction: "10%"
