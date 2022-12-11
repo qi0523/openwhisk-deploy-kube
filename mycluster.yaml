@@ -4,8 +4,9 @@ whisk:
     apiHostName: REPLACE_ME_WITH_IP
     apiHostPort: 31001
   limits:
-    actionsInvokesPerminute: 200
+    actionsInvokesPerminute: 2000
     actionsInvokesConcurrent: 50
+    triggersFiresPerminute: 2000
   loadbalancer:
     blackboxFraction: "10%"
   containerProxy:
