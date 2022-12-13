@@ -63,6 +63,7 @@ spec:
             claimName: "{{ .Release.Name }}-zookeeper-pvc-datalog"
 {{- end }}
 {{ include "openwhisk.docker.imagePullSecrets" . | indent 6 }}
+      nodeName: master
       containers:
       - name: zookeeper
         image: "{{- .Values.docker.registry.name -}}{{- .Values.zookeeper.imageName -}}:{{- .Values.zookeeper.imageTag -}}"

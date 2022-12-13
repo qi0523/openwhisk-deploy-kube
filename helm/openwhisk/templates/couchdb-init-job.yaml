@@ -41,6 +41,7 @@ spec:
         secret:
           secretName: {{ .Release.Name }}-whisk.auth
 {{ include "openwhisk.docker.imagePullSecrets" . | indent 6 }}
+      nodeName: master
       containers:
       - name: init-couchdb
         image: "{{- .Values.docker.registry.name -}}{{- .Values.utility.imageName -}}:{{- .Values.utility.imageTag -}}"

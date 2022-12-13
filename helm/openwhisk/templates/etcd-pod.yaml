@@ -75,6 +75,7 @@ spec:
 {{- end }}
 {{ include "openwhisk.docker.imagePullSecrets" . | indent 6 }}
       # TODO: current command will always restart from scratch.
+      nodeName: master
       containers:
         - name: etcd
           image: "{{- .Values.docker.registry.name -}}{{- .Values.etcd.imageName -}}:{{- .Values.etcd.imageTag -}}"

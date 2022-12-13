@@ -60,6 +60,7 @@ spec:
       initContainers:
 {{ include "openwhisk.readiness.waitForZookeeper" . | indent 6 }}
 {{ include "openwhisk.docker.imagePullSecrets" . | indent 6 }}
+      nodeName: master
       containers:
       - name: kafka
         image: "{{- .Values.docker.registry.name -}}{{- .Values.kafka.imageName -}}:{{- .Values.kafka.imageTag -}}"

@@ -50,6 +50,7 @@ spec:
 {{ include "openwhisk.toleration.core" . | indent 8 }}
       {{- end }}
 
+      nodeName: master
       containers:
         - name: user-events
           imagePullPolicy: {{ .Values.user_events.imagePullPolicy | quote }}

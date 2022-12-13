@@ -60,7 +60,7 @@ spec:
       # The scheduler must wait for kafka and/or couchdb to be ready before it starts
 {{ include "openwhisk.readiness.waitForController" . | indent 6 }}
 {{ include "openwhisk.docker.imagePullSecrets" . | indent 6 }}
-
+      nodeName: master
       containers:
       - name: scheduler
         imagePullPolicy: {{ .Values.scheduler.imagePullPolicy | quote }}

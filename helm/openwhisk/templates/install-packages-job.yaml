@@ -46,6 +46,7 @@ spec:
 {{ end }}
 {{ end }}
 {{ include "openwhisk.docker.imagePullSecrets" . | indent 6 }}
+      nodeName: master
       containers:
       - name: install-packages
         image: "{{- .Values.docker.registry.name -}}{{- .Values.utility.imageName -}}:{{- .Values.utility.imageTag -}}"

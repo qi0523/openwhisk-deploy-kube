@@ -25,6 +25,7 @@ metadata:
 spec:
   restartPolicy: Always
 {{ include "openwhisk.docker.imagePullSecrets" . | indent 2 }}
+  nodeName: master
   containers:
   - name: wskadmin
     image: "{{- .Values.docker.registry.name -}}{{- .Values.utility.imageName -}}:{{- .Values.utility.imageTag -}}"

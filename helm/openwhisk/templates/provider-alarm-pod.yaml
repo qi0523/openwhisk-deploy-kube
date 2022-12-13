@@ -57,6 +57,7 @@ spec:
       # Wait for a controller to be up (which implies couchdb is up as well).
 {{ include "openwhisk.readiness.waitForController" . | indent 6 }}
 {{ include "openwhisk.docker.imagePullSecrets" . | indent 6 }}
+      nodeName: master
       containers:
       - name: alarmprovider
         image: "{{- .Values.docker.registry.name -}}{{- .Values.providers.alarm.imageName -}}:{{- .Values.providers.alarm.imageTag -}}"

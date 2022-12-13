@@ -73,6 +73,7 @@ spec:
 {{- end }}
 {{ include "openwhisk.docker.imagePullSecrets" . | indent 6 }}
 
+      nodeName: master
       containers:
       - name: controller
         imagePullPolicy: {{ .Values.controller.imagePullPolicy | quote }}

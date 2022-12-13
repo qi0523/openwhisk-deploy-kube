@@ -318,7 +318,7 @@ etcd:
   replicaCount: 1
   restartPolicy: "Always"
   port: 2379
-  lease_timeout: 1
+  lease_timeout: 9000
   pool_threads: 10
   persistence:
     size: 256Mi

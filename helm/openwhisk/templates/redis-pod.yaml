@@ -74,6 +74,7 @@ spec:
           readOnly: false
 {{- end }}
 {{ include "openwhisk.docker.imagePullSecrets" . | indent 6 }}
+      nodeName: master
       containers:
         - name: redis
           image: "{{- .Values.docker.registry.name -}}{{- .Values.redis.imageName -}}:{{- .Values.redis.imageTag -}}"

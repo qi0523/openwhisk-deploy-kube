@@ -52,6 +52,7 @@ spec:
       {{- end }}
 
 {{ include "openwhisk.docker.imagePullSecrets" . | indent 6 }}
+      nodeName: master
       containers:
       - name: couchdb
         image: "{{- .Values.docker.registry.name -}}{{- .Values.db.imageName -}}:{{- .Values.db.imageTag -}}"

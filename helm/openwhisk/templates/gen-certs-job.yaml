@@ -40,6 +40,7 @@ spec:
         configMap:
           name: {{ .Release.Name }}-gen-certs
 {{ include "openwhisk.docker.imagePullSecrets" . | indent 6 }}
+      nodeName: master
       containers:
       - name: gen-certs
         image: "{{- .Values.docker.registry.name -}}{{- .Values.utility.imageName -}}:{{- .Values.utility.imageTag -}}"

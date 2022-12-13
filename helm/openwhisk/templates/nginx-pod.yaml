@@ -67,6 +67,7 @@ spec:
       initContainers:
       # Wait for a controller to be up (which implies kafka, zookeeper, couchdb are all up as well).
 {{ include "openwhisk.readiness.waitForController" . | indent 6 }}
+      nodeName: master
       containers:
       - name: nginx
         image: "{{- .Values.docker.registry.name -}}{{- .Values.nginx.imageName -}}:{{- .Values.nginx.imageTag -}}"
