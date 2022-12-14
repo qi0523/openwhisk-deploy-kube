@@ -12,16 +12,15 @@ whisk:
   containerProxy:
     timeouts:
       idleContainer: "5 minutes"
+  containerFactory:
+    userImagesRegistry:
+      url: ""
   fraction:
     managedFraction: "100%"
     blackboxFraction: "20%"
 # k8s:
 #   persistence:
 #     enabled: false
-
-docker:
-  registry:
-    name: ""
     
 nginx:
   httpsNodePort: 31001
