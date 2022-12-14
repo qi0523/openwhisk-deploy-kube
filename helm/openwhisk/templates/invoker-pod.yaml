@@ -112,6 +112,8 @@ spec:
 
           - name: "CONFIG_whisk_imageGc_lowThresholdPercent"
             value: {{ .Values.invoker.imageGc.lowThresholdPercent | quote }}
+          - name: "CONFIG_whisk_containerFactory_runtimesRegistry_url"
+            value: {{ .Values.whisk.containerFactory.runtimesRegistry.url | quote }}
           # Needed by invoker to set the environment variable __OW_API_HOST in action containers
 {{ include "openwhisk.invoker.apihost" . | indent 10 }}
 

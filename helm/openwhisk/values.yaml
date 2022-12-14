@@ -99,6 +99,9 @@ whisk:
   containerProxy:
     timeouts:
       idleContainer: "10 minutes"
+  containerFactory:
+    runtimesRegistry:
+      url: ""
   fraction:
     managedFraction: "90%"
     blackboxFraction: "10%"
