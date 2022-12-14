@@ -18,6 +18,10 @@ whisk:
 # k8s:
 #   persistence:
 #     enabled: false
+
+docker:
+  registry:
+    name: ""
     
 nginx:
   httpsNodePort: 31001
