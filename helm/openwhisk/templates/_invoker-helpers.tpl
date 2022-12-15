@@ -37,6 +37,9 @@
 - name: nerdctl
   hostPath:
     path: "/usr/bin/nerdctl"
+- name: ctr
+  hostPath:
+    path: "/usr/local/bin/ctr"
 - name: nerdctlrootdir
   hostPath:
     path: "/var/lib/nerdctl"
@@ -59,6 +62,8 @@
   mountPath: "/var/lib/containerd"
 - name: nerdctl
   mountPath: "/usr/bin/nerdctl"
+- name: ctr
+  mountPath: "/usr/local/bin/ctr"
 - name: nerdctlrootdir
   mountPath: "/var/lib/nerdctl"
 - name: cni
