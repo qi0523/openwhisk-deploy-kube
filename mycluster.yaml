@@ -26,13 +26,14 @@ nginx:
   httpsNodePort: 31001
 invoker:
   loglevel: "WARN"
+  jvmHeapMB: "2048"
   containerFactory:
     impl: "docker"
   imageGc:
     delay: "120"
     diskPath: "/"
     highThresholdPercent: "85"
-    lowThresholdPercent: "65"
+    lowThresholdPercent: "70"
 
 controller:
   jvmHeapMB: "2048"

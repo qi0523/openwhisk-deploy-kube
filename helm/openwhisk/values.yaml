@@ -335,7 +335,7 @@ invoker:
   runtimeDeleteTimeout: "30 seconds"
   port: 8080
   options: ""
-  jvmHeapMB: "512"
+  jvmHeapMB: "1024"
   jvmOptions: ""
   loglevel: "INFO"
   containerFactory:
