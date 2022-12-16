@@ -40,6 +40,9 @@
 - name: ctr
   hostPath:
     path: "/usr/local/bin/ctr"
+- name: crictl
+  hostPath:
+    path: "/usr/bin/crictl"
 - name: nerdctlrootdir
   hostPath:
     path: "/var/lib/nerdctl"
@@ -64,6 +67,8 @@
   mountPath: "/usr/bin/nerdctl"
 - name: ctr
   mountPath: "/usr/local/bin/ctr"
+- name: crictl
+  mountPath: "/usr/bin/crictl"
 - name: nerdctlrootdir
   mountPath: "/var/lib/nerdctl"
 - name: cni
