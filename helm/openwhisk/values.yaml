@@ -511,39 +511,39 @@ probes:
   zookeeper:
     livenessProbe:
       initialDelaySeconds: 5
-      periodSeconds: 10
-      timeoutSeconds: 1
+      periodSeconds: 60
+      timeoutSeconds: 10
     readinessProbe:
       initialDelaySeconds: 5
-      periodSeconds: 10
-      timeoutSeconds: 1
+      periodSeconds: 60
+      timeoutSeconds: 10
   kafka:
     livenessProbe:
       initialDelaySeconds: 5
-      periodSeconds: 10
-      timeoutSeconds: 1
+      periodSeconds: 60
+      timeoutSeconds: 10
     readinessProbe:
       initialDelaySeconds: 5
-      periodSeconds: 10
-      timeoutSeconds: 5
+      periodSeconds: 60
+      timeoutSeconds: 10
   controller:
     livenessProbe:
       initialDelaySeconds: 10
-      periodSeconds: 10
-      timeoutSeconds: 1
+      periodSeconds: 60
+      timeoutSeconds: 10
     readinessProbe:
       initialDelaySeconds: 10
-      periodSeconds: 10
-      timeoutSeconds: 1
+      periodSeconds: 60
+      timeoutSeconds: 10
   scheduler:
     livenessProbe:
       initialDelaySeconds: 10
-      periodSeconds: 10
-      timeoutSeconds: 1
+      periodSeconds: 60
+      timeoutSeconds: 10
     readinessProbe:
       initialDelaySeconds: 10
-      periodSeconds: 10
-      timeoutSeconds: 1
+      periodSeconds: 60
+      timeoutSeconds: 10
 
 # Pod Disruption Budget allows Pods to survive Voluntary and Involuntary Disruptions.
 # for more information refer - https://kubernetes.io/docs/concepts/workloads/pods/disruptions/
