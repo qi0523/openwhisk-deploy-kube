@@ -192,12 +192,12 @@ zookeeper:
   serverPort: 2888
   leaderElectionPort: 3888
   persistence:
-    size: 256Mi
+    size: 512Mi
   # Default values for entries in zoo.cfg (see Apache Zookeeper documentation for semantics)
   config:
-    tickTime: 2000
-    initLimit: 5
-    syncLimit: 2
+    tickTime: 10000
+    initLimit: 10
+    syncLimit: 5
     dataDir: "/data"
     dataLogDir: "/datalog"
 
@@ -212,7 +212,7 @@ kafka:
   connect_string: null
   port: 9092
   persistence:
-    size: 512Mi
+    size: 1024Mi
 
 # Database configuration
 db:
@@ -293,9 +293,9 @@ scheduler:
   # Sometimes the kubernetes client takes a long time for pod creation
   inProgressJobRetention: "60 seconds"
   dataManagementService:
-    retryInterval: "1 second"
+    retryInterval: "5 second"
   queueManager:
-    maxSchedulingTime: "20 second"
+    maxSchedulingTime: "30 second"
     maxRetriesToGetQueue: "13"
   queue:
     idleGrace: "80 seconds"
@@ -322,9 +322,9 @@ etcd:
   restartPolicy: "Always"
   port: 2379
   lease_timeout: 9000
-  pool_threads: 10
+  pool_threads: 100
   persistence:
-    size: 256Mi
+    size: 512Mi
 
 # Invoker configurations
 invoker:
@@ -385,7 +385,7 @@ redis:
   host: null
   port: 6379
   persistence:
-    size: 256Mi
+    size: 1024Mi
 
 # User-events configuration
 user_events:
