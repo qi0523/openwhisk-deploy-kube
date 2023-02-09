@@ -283,6 +283,7 @@ scheduler:
   replicaCount: 1 # only 1 is currently supported
   restartPolicy: "Always"
   port: 8080
+  qps: 8
   rpcPort: 13001
   options: ""
   jvmHeapMB: "1024"

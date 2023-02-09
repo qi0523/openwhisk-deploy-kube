@@ -39,6 +39,7 @@ controller:
   jvmHeapMB: "2048"
 
 scheduler:
+  qps: 8
   loglevel: "WARN"
   inProgressJobRetention: "300 seconds"
   jvmHeapMB: "2048"
