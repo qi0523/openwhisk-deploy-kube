@@ -7,7 +7,7 @@
                 "image": {
                     "prefix": "openwhisk",
                     "name": "action-nodejs-v8",
-                    "tag": "1.20.0"
+                    "tag": "obd"
                 },
                 "deprecated": false,
                 "attached": {
@@ -21,7 +21,7 @@
                 "image": {
                     "prefix": "openwhisk",
                     "name": "action-nodejs-v10",
-                    "tag": "1.20.0"
+                    "tag": "obd"
                 },
                 "deprecated": false,
                 "attached": {
@@ -35,7 +35,7 @@
                 "image": {
                     "prefix": "openwhisk",
                     "name": "action-nodejs-v12",
-                    "tag": "1.20.0"
+                    "tag": "obd"
                 },
                 "deprecated": false,
                 "attached": {
@@ -49,7 +49,7 @@
                 "image": {
                     "prefix": "openwhisk",
                     "name": "action-nodejs-v14",
-                    "tag": "1.20.0"
+                    "tag": "obd"
                 },
                 "deprecated": false,
                 "attached": {
@@ -63,7 +63,7 @@
                 "image": {
                     "prefix": "openwhisk",
                     "name": "action-nodejs-v16",
-                    "tag": "1.20.0"
+                    "tag": "obd"
                 },
                 "deprecated": false,
                 "attached": {
@@ -79,7 +79,7 @@
                 "image": {
                     "prefix": "openwhisk",
                     "name": "action-python-v3.9",
-                    "tag": "1.20.0"
+                    "tag": "obd"
                 },
                 "deprecated": false,
                 "attached": {
@@ -93,7 +93,7 @@
                 "image": {
                     "prefix": "openwhisk",
                     "name": "python2action",
-                    "tag": "1.20.0"
+                    "tag": "obd"
                 },
                 "deprecated": false,
                 "attached": {
@@ -109,7 +109,7 @@
                 "image": {
                     "prefix": "openwhisk",
                     "name": "action-swift-v4.2",
-                    "tag": "1.20.0"
+                    "tag": "obd"
                 },
                 "deprecated": false,
                 "attached": {
@@ -125,7 +125,7 @@
                 "image": {
                     "prefix": "openwhisk",
                     "name": "java8action",
-                    "tag": "1.20.0"
+                    "tag": "obd"
                 },
                 "deprecated": false,
                 "attached": {
@@ -143,7 +143,7 @@
                 "image": {
                     "prefix": "openwhisk",
                     "name": "action-php-v7.3",
-                    "tag": "1.20.0"
+                    "tag": "obd"
                 },
                 "attached": {
                     "attachmentName": "codefile",
@@ -157,7 +157,7 @@
                 "image": {
                     "prefix": "openwhisk",
                     "name": "action-php-v7.4",
-                    "tag": "1.20.0"
+                    "tag": "obd"
                 },
                 "attached": {
                     "attachmentName": "codefile",
@@ -177,7 +177,7 @@
                 "image": {
                     "prefix": "openwhisk",
                     "name": "action-ruby-v2.5",
-                    "tag": "1.20.0"
+                    "tag": "obd"
                 }
             }
         ],
@@ -193,7 +193,7 @@
                 "image": {
                     "prefix": "openwhisk",
                     "name": "action-golang-v1.15",
-                    "tag": "1.20.0"
+                    "tag": "obd"
                 }
             }
         ],
@@ -237,7 +237,7 @@
                 "image": {
                     "prefix": "openwhisk",
                     "name": "action-dotnet-v3.1",
-                    "tag": "1.20.0"
+                    "tag": "obd"
                 },
                 "attached": {
                     "attachmentName": "codefile",

@@ -25,6 +25,8 @@ whisk:
 nginx:
   httpsNodePort: 31001
 invoker:
+  imageName: "qi0523/invoker"
+  imageTag: "obd"
   loglevel: "WARN"
   jvmHeapMB: "2048"
   containerFactory:
@@ -39,6 +41,8 @@ controller:
   jvmHeapMB: "2048"
 
 scheduler:
+  imageName: "qi0523/scheduler"
+  imageTag: "obd"
   qps: 8
   loglevel: "WARN"
   inProgressJobRetention: "300 seconds"

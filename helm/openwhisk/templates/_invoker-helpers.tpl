@@ -52,6 +52,9 @@
 - name: cnirootdir
   hostPath:
     path: "/var/lib/cni"
+- name: overlaybdsock
+  hostPath:
+    path: "/run/overlaybd-snapshotter"
 {{- end -}}
 
 {{- define "openwhisk.docker_volume_mounts" -}}
@@ -75,6 +78,8 @@
   mountPath: "/opt/cni/bin"
 - name: cnirootdir
   mountPath: "/var/lib/cni"
+- name: overlaybdsock
+  mountPath: "/run/overlaybd-snapshotter"
 {{- end -}}
 
 {{- define "openwhisk.docker_pull_runtimes" -}}
