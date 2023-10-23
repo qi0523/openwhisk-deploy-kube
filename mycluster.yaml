@@ -53,7 +53,8 @@ scheduler:
     throttlingFraction: 0.9
     durationBufferSize: 10
   p2pManager:
-    remoteRegistryUrl: "docker.io"
+    # remoteRegistryUrl: "docker.io"
+    remoteRegistryUrl: "342671031709.dkr.ecr.cn-northwest-1.amazonaws.com.cn"
     dlclCurrent: "2"
   P2PManagerProvider: "org.apache.openwhisk.core.scheduler.p2p.dlcl.DLCLManagerProvider"
   #P2PManagerProvider: "org.apache.openwhisk.core.scheduler.p2p.ft.FTManagerProvider"
