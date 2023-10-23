@@ -55,6 +55,12 @@
 - name: overlaybdsock
   hostPath:
     path: "/run/overlaybd-snapshotter"
+- name: certsdir
+  hostPath:
+    path: "/etc/containerd/certs.d"
+- name: devdir
+  hostPath:
+    path: "/dev"
 {{- end -}}
 
 {{- define "openwhisk.docker_volume_mounts" -}}
@@ -80,6 +86,10 @@
   mountPath: "/var/lib/cni"
 - name: overlaybdsock
   mountPath: "/run/overlaybd-snapshotter"
+- name: certsdir
+  mountPath: "/etc/containerd/certs.d"
+- name: devdir
+  mountPath: "/dev"
 {{- end -}}
 
 {{- define "openwhisk.docker_pull_runtimes" -}}
