@@ -69,6 +69,8 @@ spec:
         ports:
         - name: scheduler
           containerPort: {{ .Values.scheduler.port }}
+        - containerPort: 13002
+          hostPort: 13002
         - name: rpc
           containerPort: {{ .Values.scheduler.rpcPort }}
         - name: akka-remoting
