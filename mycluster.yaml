@@ -14,7 +14,7 @@ whisk:
       idleContainer: "5 minutes"
   containerFactory:
     userImagesRegistry:
-      url: ""
+      url: "172.17..1:30000/@@~~~~0"
   fraction:
     managedFraction: "100%"
     blackboxFraction: "20%"
