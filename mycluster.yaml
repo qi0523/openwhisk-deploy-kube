@@ -12,6 +12,8 @@ whisk:
   containerProxy:
     timeouts:
       idleContainer: "5 minutes"
+  containerPool:
+    userMemory: "4096m"
   containerFactory:
     userImagesRegistry:
       url: "172.17..1:30000/@@~~~~0"
