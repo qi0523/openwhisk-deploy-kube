@@ -4,8 +4,8 @@ whisk:
     apiHostName: REPLACE_ME_WITH_IP
     apiHostPort: 31001
   limits:
-    actionsInvokesPerminute: 2000
-    actionsInvokesConcurrent: 2000
+    actionsInvokesPerminute: 3000
+    actionsInvokesConcurrent: 3000
     triggersFiresPerminute: 2000
   loadbalancer:
     blackboxFraction: "10%"
@@ -28,9 +28,9 @@ nginx:
   httpsNodePort: 31001
 invoker:
   imageName: "qi0523/invoker"
-  imageTag: "obd"
+  imageTag: "lab_obd"
   loglevel: "WARN"
-  jvmHeapMB: "2048"
+  jvmHeapMB: "4096"
   containerFactory:
     impl: "docker"
   imageGc:
@@ -40,23 +40,23 @@ invoker:
     lowThresholdPercent: "70"
 
 controller:
-  jvmHeapMB: "2048"
+  jvmHeapMB: "4096"
 
 scheduler:
   imageName: "qi0523/scheduler"
-  imageTag: "obd"
+  imageTag: "lab_obd"
   qps: 8
   loglevel: "WARN"
   inProgressJobRetention: "300 seconds"
-  jvmHeapMB: "2048"
+  jvmHeapMB: "4096"
   queue:
     idleGrace: "120 seconds"
     maxRetentionMs: 180000
     throttlingFraction: 0.9
     durationBufferSize: 10
   p2pManager:
-    # remoteRegistryUrl: "docker.io"
-    remoteRegistryUrl: "342671031709.dkr.ecr.cn-northwest-1.amazonaws.com.cn"
+    remoteRegistryUrl: "172.17..1"
+    # remoteRegistryUrl: "342671031709.dkr.ecr.cn-northwest-1.amazonaws.com.cn"
     dlclCurrent: "2"
   P2PManagerProvider: "org.apache.openwhisk.core.scheduler.p2p.dlcl.DLCLManagerProvider"
   #P2PManagerProvider: "org.apache.openwhisk.core.scheduler.p2p.ft.FTManagerProvider"
