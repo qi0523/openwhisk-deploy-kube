@@ -66,6 +66,9 @@ spec:
         imagePullPolicy: {{ .Values.scheduler.imagePullPolicy | quote }}
         image: "{{- .Values.docker.registry.name -}}{{- .Values.scheduler.imageName -}}:{{- .Values.scheduler.imageTag -}}"
         command: ["/bin/bash", "-c", "/init.sh `hostname | awk -F '-' '{print $NF}'`"]
+        resources:
+          limits:
+            cpu: "2"
         ports:
         - name: scheduler
           containerPort: {{ .Values.scheduler.port }}
