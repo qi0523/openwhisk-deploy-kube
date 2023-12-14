@@ -48,6 +48,7 @@ scheduler:
   qps: 8
   loglevel: "WARN"
   inProgressJobRetention: "300 seconds"
+  core: 2
   jvmHeapMB: "4096"
   queue:
     idleGrace: "120 seconds"

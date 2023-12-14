@@ -286,6 +286,7 @@ scheduler:
   qps: 8
   rpcPort: 13001
   options: ""
+  cpu: 2
   jvmHeapMB: "1024"
   jvmOptions: ""
   loglevel: "INFO"

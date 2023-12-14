@@ -130,7 +130,7 @@ spec:
 
         # Java options
         - name: "JAVA_OPTS"
-          value: "-Xmx{{- .Values.scheduler.jvmHeapMB -}}M {{ .Values.scheduler.jvmOptions }}"
+          value: "-Xmx{{- .Values.scheduler.jvmHeapMB -}}M -XX:ActiveProcessorCount={{- .Values.scheduler.cpu -}} {{ .Values.scheduler.jvmOptions }}"
 
         # specific scheduler arguments
         - name: "SCHEDULER_OPTS"
