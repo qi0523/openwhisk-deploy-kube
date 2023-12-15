@@ -198,7 +198,7 @@ spec:
           value: {{ .Values.scheduler.p2pManager.count | quote }}
 
         - name: "CONFIG_whisk_scheduler_scheduling_concurrency"
-          value: {{ .Values.scheduler.scheduling.concurrency | quote }}
+          value: {{ .Values.whisk.scheduler.scheduling.concurrency | quote }}
 
         - name: "CONFIG_whisk_spi_P2PManagerProvider"
           value: {{ .Values.scheduler.P2PManagerProvider | quote }}
