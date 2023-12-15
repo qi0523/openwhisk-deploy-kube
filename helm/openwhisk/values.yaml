@@ -80,7 +80,7 @@ whisk:
         std: "1m"
       memory:
         min: "32m"
-        max: "2048m"
+        max: "4096m"
         std: "256m"
       concurrency:
         min: 1
@@ -105,6 +105,9 @@ whisk:
   fraction:
     managedFraction: "90%"
     blackboxFraction: "10%"
+  scheduler:
+    scheduling:
+      concurrency: 16
   # Kafka configuration. For all sub-fields a value of "" means use the default from application.conf
   kafka:
     replicationFactor: ""
@@ -311,6 +314,9 @@ scheduler:
   p2pManager:
     remoteRegistryUrl: "docker.io"
     dlclCurrent: "2"
+    actionName: "652bd96a291056ee82768de0f7b5edd5"
+    count: "0"
+
   P2PManagerProvider: "org.apache.openwhisk.core.scheduler.p2p.dlcl.DLCLManagerProvider"
 
 # etcd (used by scheduler and controller if scheduler is enabled)

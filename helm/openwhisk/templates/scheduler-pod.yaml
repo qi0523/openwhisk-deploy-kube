@@ -190,6 +190,15 @@ spec:
 
         - name: "CONFIG_whisk_scheduler_p2pManager_dlclCurrent"
           value: {{ .Values.scheduler.p2pManager.dlclCurrent | quote }}
+        
+        - name: "CONFIG_whisk_scheduler_p2pManager_actionName"
+          value: {{ .Values.scheduler.p2pManager.actionName | quote }}
+        
+        - name: "CONFIG_whisk_scheduler_p2pManager_count"
+          value: {{ .Values.scheduler.p2pManager.count | quote }}
+
+        - name: "CONFIG_whisk_scheduler_scheduling_concurrency"
+          value: {{ .Values.scheduler.scheduling.concurrency | quote }}
 
         - name: "CONFIG_whisk_spi_P2PManagerProvider"
           value: {{ .Values.scheduler.P2PManagerProvider | quote }}

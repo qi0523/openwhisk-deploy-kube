@@ -9,9 +9,12 @@ whisk:
     triggersFiresPerminute: 2000
   loadbalancer:
     blackboxFraction: "10%"
+  scheduler:
+    scheduling:
+      concurrency: 16
   containerProxy:
     timeouts:
-      idleContainer: "5 minutes"
+      idleContainer: "3 minutes"
   containerPool:
     userMemory: "4096m"
   containerFactory:
@@ -28,7 +31,7 @@ nginx:
   httpsNodePort: 31001
 invoker:
   imageName: "qi0523/invoker"
-  imageTag: "lab_obd"
+  imageTag: "dlcl"
   loglevel: "WARN"
   jvmHeapMB: "4096"
   containerFactory:
@@ -44,7 +47,7 @@ controller:
 
 scheduler:
   imageName: "qi0523/scheduler"
-  imageTag: "lab_obd"
+  imageTag: "dlcl"
   qps: 8
   loglevel: "WARN"
   inProgressJobRetention: "300 seconds"
@@ -59,6 +62,8 @@ scheduler:
     remoteRegistryUrl: "172.17..1"
     # remoteRegistryUrl: "342671031709.dkr.ecr.cn-northwest-1.amazonaws.com.cn"
     dlclCurrent: "2"
+    actionName: ""
+    count: 500
   P2PManagerProvider: "org.apache.openwhisk.core.scheduler.p2p.dlcl.DLCLManagerProvider"
   #P2PManagerProvider: "org.apache.openwhisk.core.scheduler.p2p.ft.FTManagerProvider"
   #P2PManagerProvider: "org.apache.openwhisk.core.scheduler.p2p.NoneManagerProvider"
