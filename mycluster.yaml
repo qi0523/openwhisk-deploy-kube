@@ -62,7 +62,7 @@ scheduler:
     remoteRegistryUrl: "172.17..1"
     # remoteRegistryUrl: "342671031709.dkr.ecr.cn-northwest-1.amazonaws.com.cn"
     dlclCurrent: "2"
-    actionName: "6a084cf70d89160151bfe9722cb4c124|7a084cf70d89160151bfe9722cb4c124|8a084cf70d89160151bfe9722cb4c124"
+    actionName: "1a084cf70d89160151bfe9722cb4c124|2a084cf70d89160151bfe9722cb4c124|3a084cf70d89160151bfe9722cb4c124|4a084cf70d89160151bfe9722cb4c124|5a084cf70d89160151bfe9722cb4c124|6a084cf70d89160151bfe9722cb4c124|7a084cf70d89160151bfe9722cb4c124|8a084cf70d89160151bfe9722cb4c124|9a084cf70d89160151bfe9722cb4c124|aa084cf70d89160151bfe9722cb4c124|ba084cf70d89160151bfe9722cb4c124|ca084cf70d89160151bfe9722cb4c124"
     count: 500
   P2PManagerProvider: "org.apache.openwhisk.core.scheduler.p2p.dlcl.DLCLManagerProvider"
   #P2PManagerProvider: "org.apache.openwhisk.core.scheduler.p2p.ft.FTManagerProvider"
