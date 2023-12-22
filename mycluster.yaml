@@ -19,7 +19,7 @@ whisk:
     userMemory: "4096m"
   containerFactory:
     userImagesRegistry:
-      url: "172.17..1:30000/@@~~~~0"
+      url: "docker.io/@@~~~~0"
   fraction:
     managedFraction: "100%"
     blackboxFraction: "20%"
@@ -47,7 +47,7 @@ controller:
 
 scheduler:
   imageName: "qi0523/scheduler"
-  imageTag: "dlcl"
+  imageTag: "dlcl-35000"
   qps: 8
   loglevel: "WARN"
   inProgressJobRetention: "300 seconds"
@@ -59,7 +59,7 @@ scheduler:
     throttlingFraction: 0.9
     durationBufferSize: 10
   p2pManager:
-    remoteRegistryUrl: "172.17..1"
+    remoteRegistryUrl: "172.17.ow1.1"
     # remoteRegistryUrl: "342671031709.dkr.ecr.cn-northwest-1.amazonaws.com.cn"
     dlclCurrent: "2"
     actionName: "1a084cf70d89160151bfe9722cb4c124|2a084cf70d89160151bfe9722cb4c124|3a084cf70d89160151bfe9722cb4c124|4a084cf70d89160151bfe9722cb4c124|5a084cf70d89160151bfe9722cb4c124|6a084cf70d89160151bfe9722cb4c124|7a084cf70d89160151bfe9722cb4c124|8a084cf70d89160151bfe9722cb4c124|9a084cf70d89160151bfe9722cb4c124|aa084cf70d89160151bfe9722cb4c124|ba084cf70d89160151bfe9722cb4c124|ca084cf70d89160151bfe9722cb4c124"
